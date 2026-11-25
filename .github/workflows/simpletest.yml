@@ -6,9 +6,8 @@
       branches:
         - 'main' 
     
-    schedule: 
-      - cron: '30 5 * * *'
-        timezone: "Asia/Colombo"
+  schedule: 
+    - cron: '30 5 * * *'
         
   jobs:
     check-syntax:  # job id   
