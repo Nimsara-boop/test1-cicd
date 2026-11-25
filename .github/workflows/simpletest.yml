@@ -1,0 +1,27 @@
+---
+  name: "simple tests"
+  
+  on: 
+    push:
+      branches:
+        - 'main' 
+    
+    schedule: 
+      - cron: '30 5 * * 1-5'
+        timezone: "Asia/Colombo"
+        
+  jobs:
+    check-syntax:  # job id   
+      runs-on: ubuntu-latest
+      
+      steps:  
+        - name: Checkout repo
+          uses: actions /checkout@v4
+          
+        - name: Run a Github actions and check for syntax errors
+          run: |
+            pip install yamllint
+            yamllint .github/workflows/dart.yml
+            
+  
+  
