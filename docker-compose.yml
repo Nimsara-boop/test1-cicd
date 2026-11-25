@@ -15,7 +15,7 @@ services:
       timeout: 3s
       retries: 5
     ports:
-      - "5432:5432"
+      - "5430:5432"
 
   redis:
     image: redis:7-alpine
@@ -25,7 +25,7 @@ services:
       timeout: 3s
       retries: 5
     ports:
-      - "6379:6379"
+      - "6389:6379"
 
   backend:
     build:
@@ -40,7 +40,7 @@ services:
       - ./backend:/app
       - ./docker/backend/entrypoint.sh:/entrypoint.sh:ro
     ports:
-      - "8000:8000"
+      - "8100:8000"
     depends_on:
       db:
         condition: service_healthy
