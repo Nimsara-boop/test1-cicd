@@ -20,7 +20,7 @@
         - name: Run a Github actions and check for syntax errors
           run: |
             pip install yamllint
-            yamllint .github/workflows/dart.yml
+            yamllint .github/workflows/flutter.yml
             
   
   
